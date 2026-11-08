@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProElektro NS - Nowoczesne Instalacje Elektryczne & Smart Home Nowy Sącz</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0B0F17',
+                            card: '#161F30',
+                            cardHover: '#1E293B',
+                            yellow: '#FFC107',
+                            yellowHover: '#FFB300',
+                            whatsapp: '#25D366',
+                            whatsappHover: '#1EBE5D'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Modern styled scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B0F17;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1E293B;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FFC107;
+        }
+
+        /* Mobile drawer animation */
+        #mobile-menu {
+            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        #mobile-menu.open {
+            max-height: 400px;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-gray-300 font-sans antialiased selection:bg-brand-yellow selection:text-brand-dark">
+
+    <!-- Header / Navbar -->
+    <nav class="fixed w-full z-50 top-0 bg-brand-dark/95 backdrop-blur-md border-b border-gray-800" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <div class="w-10 h-10 bg-brand-yellow rounded-lg flex items-center justify-center text-brand-dark font-black text-2xl shadow-[0_0_15px_rgba(255,193,7,0.4)]">
+                        <i class="ph-fill ph-lightning"></i>
+                    </div>
+                    <span class="font-extrabold text-2xl text-white tracking-tight">Pro<span class="text-brand-yellow">Elektro</span> <span class="text-xs px-2 py-0.5 rounded bg-gray-800 border border-gray-700 text-gray-400 font-semibold uppercase tracking-wider ml-1">NS</span></span>
+                </div>
+                
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#hero" class="text-gray-300 hover:text-brand-yellow transition-colors font-medium">Start</a>
+                    <a href="#o-nas" class="text-gray-300 hover:text-brand-yellow transition-colors font-medium">O nas</a>
+                    <a href="#uslugi" class="text-gray-300 hover:text-brand-yellow transition-colors font-medium">Usługi</a>
+                    <a href="#portfolio" class="text-gray-300 hover:text-brand-yellow transition-colors font-medium">Portfolio</a>
+                    <a href="#kontakt" class="bg-brand-yellow text-brand-dark px-5 py-2.5 rounded-lg font-bold hover:bg-brand-yellowHover transition-all shadow-[0_0_15px_rgba(255,193,7,0.3)]">
+                        Kontakt i Wycena
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" aria-label="Menu" class="text-gray-300 hover:text-white p-2">
+                        <i class="ph ph-list text-3xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="md:hidden bg-brand-card border-b border-gray-800">
+            <div class="px-4 pt-2 pb-6 space-y-2 flex flex-col">
+                <a href="#hero" class="mobile-link text-gray-300 hover:text-brand-yellow py-2.5 rounded-md font-medium border-b border-gray-800">Start</a>
+                <a href="#o-nas" class="mobile-link text-gray-300 hover:text-brand-yellow py-2.5 rounded-md font-medium border-b border-gray-800">O nas</a>
+                <a href="#uslugi" class="mobile-link text-gray-300 hover:text-brand-yellow py-2.5 rounded-md font-medium border-b border-gray-800">Usługi</a>
+                <a href="#portfolio" class="mobile-link text-gray-300 hover:text-brand-yellow py-2.5 rounded-md font-medium border-b border-gray-800">Portfolio</a>
+                <a href="#kontakt" class="mobile-link text-brand-yellow font-bold py-3">Szybki Kontakt</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative pt-32 pb-20 md:pt-44 md:pb-32 flex items-center overflow-hidden">
+        <!-- Subtle Grid Overlay -->
+        <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#FFC107 1px, transparent 1px); background-size: 36px 36px;"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/90 to-transparent"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 w-full flex flex-col lg:flex-row items-center gap-12">
+            <div class="lg:w-7/12 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-brand-yellow/30 bg-brand-yellow/10 text-brand-yellow text-sm font-semibold mb-6">
+                    <i class="ph-fill ph-map-pin"></i> Obsługujemy Nowy Sącz i Okolice (do 50 km)
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
+                    Nowoczesne Instalacje Elektryczne i <span class="text-brand-yellow">Smart Home</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-400 mb-8 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                    Profesjonalny montaż instalacji podtynkowych, rozdzielnic oraz systemów automatyki. Praca czysta, bezpyłowa i terminowa.
+                </p>
+
+                <!-- Action Buttons / CTA -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <!-- Direct WhatsApp link -->
+                    <a href="https://wa.me/48500000000?text=Dzie%C5%84%20dobry%2C%20chcia%C5%82bym%20zapyta%C4%87%20o%20wycen%C4%99%20instalacji." target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 bg-brand-whatsapp text-white px-7 py-4 rounded-xl font-bold text-lg hover:bg-brand-whatsappHover transition-all shadow-[0_0_20px_rgba(37,211,102,0.3)]">
+                        <i class="ph-fill ph-whatsapp-logo text-2xl"></i> Napisz na WhatsApp
+                    </a>
+                    <!-- Direct Phone Call link -->
+                    <a href="tel:+48500000000" class="flex items-center justify-center gap-3 bg-brand-card border border-gray-700 text-white px-7 py-4 rounded-xl font-bold text-lg hover:border-brand-yellow hover:text-brand-yellow transition-all">
+                        <i class="ph-fill ph-phone-call text-xl text-brand-yellow"></i> Zadzwoń teraz
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:w-5/12 w-full mt-6 lg:mt-0 relative">
+                <div class="absolute -inset-1 bg-gradient-to-r from-brand-yellow to-yellow-600 rounded-2xl blur opacity-20"></div>
+                <div class="relative bg-brand-card p-4 rounded-2xl border border-gray-800">
+                    <img src="https://placehold.co/600x500/161F30/FFC107?text=ProElektro+NS\nPrecyzja+i+Jako%C5%9B%C4%87" alt="Wykonywanie instalacji elektrycznych" class="rounded-xl w-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- O nas Section -->
+    <section id="o-nas" class="py-20 bg-brand-card border-t border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <div class="lg:w-1/2">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-brand-dark p-6 rounded-xl border border-gray-800 text-center">
+                            <i class="ph-fill ph-shield-check text-4xl text-brand-yellow mb-2"></i>
+                            <h4 class="font-bold text-white text-lg">Uprawnienia G1</h4>
+                            <p class="text-xs text-gray-400 mt-1">Państwowa certyfikacja eksploatacji i dozoru</p>
+                        </div>
+                        <div class="bg-brand-dark p-6 rounded-xl border border-gray-800 text-center">
+                            <i class="ph-fill ph-sparkle text-4xl text-brand-yellow mb-2"></i>
+                            <h4 class="font-bold text-white text-lg">Praca Bezpyłowa</h4>
+                            <p class="text-xs text-gray-400 mt-1">Dedykowany odsys pyłu Bosch z odkurzaczami</p>
+                        </div>
+                        <div class="bg-brand-dark p-6 rounded-xl border border-gray-800 text-center">
+                            <i class="ph-fill ph-wrench text-4xl text-brand-yellow mb-2"></i>
+                            <h4 class="font-bold text-white text-lg">Inżynierski Standard</h4>
+                            <p class="text-xs text-gray-400 mt-1">Przemyślane układy i równy podział obwodów</p>
+                        </div>
+                        <div class="bg-brand-dark p-6 rounded-xl border border-gray-800 text-center">
+                            <i class="ph-fill ph-clock-afternoon text-4xl text-brand-yellow mb-2"></i>
+                            <h4 class="font-bold text-white text-lg">100% Terminowości</h4>
+                            <p class="text-xs text-gray-400 mt-1">Szanujemy czas kolejnych ekip budowlanych</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Standard wykonania <span class="text-brand-yellow">bez kompromisów.</span></h2>
+                    <p class="text-gray-300 text-base md:text-lg mb-6 leading-relaxed">
+                        Jesteśmy wyspecjalizowaną, dwuosobową ekipą instalacyjną świadczącą usługi na terenie Nowego Sącza i okolic. Do każdego zlecenia podchodzimy z inżynierską precyzją, stawiając na bezpieczeństwo użytkowników oraz estetykę niewidoczną na pierwszy rzut oka.
+                    </p>
+                    <p class="text-gray-400 text-base mb-8 leading-relaxed">
+                        Pracujemy na najwyższej klasy sprzęcie wyposażonym w systemy odsysania pyłu. Dzięki temu prace bruzdowe i wiercenie przebiegają czysto, sprawnie i bez niepotrzebnego pyłu na placu budowy.
+                    </p>
+                    <div class="flex items-center gap-4 p-4 rounded-xl bg-brand-dark border border-gray-800">
+                        <i class="ph-fill ph-check-circle text-3xl text-brand-yellow flex-shrink-0"></i>
+                        <div>
+                            <h5 class="font-bold text-white">Gwarancja jakości i protokół odbiorczy</h5>
+                            <p class="text-xs text-gray-400">Na każdą wykonaną instalację wydajemy formalną dokumentację odbiorczą.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Usługi Section -->
+    <section id="uslugi" class="py-20 bg-brand-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="text-brand-yellow font-bold uppercase tracking-wider text-xs mb-2">Kompleksowa oferta</div>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">W czym się specjalizujemy?</h2>
+                <p class="text-gray-400 text-base">Realizujemy instalacje w nowo budowanych domach jednorodzinnych, mieszkaniach oraz obiektach usługowych.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Usługa 1 -->
+                <div class="bg-brand-card rounded-2xl p-8 border border-gray-800 hover:border-brand-yellow transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-brand-dark rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-yellow transition-colors">
+                        <i class="ph ph-house-line text-3xl text-brand-yellow group-hover:text-brand-dark"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Instalacje Podtynkowe</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Kompleksowe bruzdowanie, układanie tras kablowych, obsadzanie puszek oraz biały montaż osprzętu elektrycznego.</p>
+                </div>
+                
+                <!-- Usługa 2 -->
+                <div class="bg-brand-card rounded-2xl p-8 border border-gray-800 hover:border-brand-yellow transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-brand-dark rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-yellow transition-colors">
+                        <i class="ph ph-cpu text-3xl text-brand-yellow group-hover:text-brand-dark"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Smart Home & Automatyka</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Projektowanie i montaż inteligentnego sterowania oświetleniem, roletami, ogrzewaniem i scenami świetlnymi z aplikacji.</p>
+                </div>
+
+                <!-- Usługa 3 -->
+                <div class="bg-brand-card rounded-2xl p-8 border border-gray-800 hover:border-brand-yellow transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-brand-dark rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-yellow transition-colors">
+                        <i class="ph ph-plugs-connected text-3xl text-brand-yellow group-hover:text-brand-dark"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Prefabrykacja Rozdzielnic</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Montaż, schematyczne zaszywanie i opisywanie rozdzielnic głównych. Dbałość o czytelność i łatwość późniejszej rozbudowy.</p>
+                </div>
+
+                <!-- Usługa 4 -->
+                <div class="bg-brand-card rounded-2xl p-8 border border-gray-800 hover:border-brand-yellow transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-brand-dark rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-yellow transition-colors">
+                        <i class="ph ph-file-magnifying-glass text-3xl text-brand-yellow group-hover:text-brand-dark"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Pomiary Odbiorcze G1</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Pomiary rezystancji izolacji, skuteczności przeciwporażeniowej (RCD) oraz pętli zwarcia z wpisem do protokołu.</p>
+                </div>
+
+                <!-- Usługa 5 -->
+                <div class="bg-brand-card rounded-2xl p-8 border border-gray-800 hover:border-brand-yellow transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-brand-dark rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-yellow transition-colors">
+                        <i class="ph ph-lightbulb text-3xl text-brand-yellow group-hover:text-brand-dark"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Biały Montaż & Oświetlenie</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Precyzyjny montaż włączników, gniazd, taśm LED, opraw wpuszczanych oraz lamp wiszących i zewnętrznych.</p>
+                </div>
+
+                <!-- Usługa 6 -->
+                <div class="bg-brand-card rounded-2xl p-8 border border-gray-800 hover:border-brand-yellow transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-brand-dark rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-yellow transition-colors">
+                        <i class="ph ph-lightning text-3xl text-brand-yellow group-hover:text-brand-dark"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Przyłącza i WLZ</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Wykonywanie linii zasilających budynek (WLZ), montaż złącz kablowych oraz uziemień fundamentowych/szpilkowych.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-brand-card border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="text-brand-yellow font-bold uppercase tracking-wider text-xs mb-2">Galeria Realizacji</div>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Nasze Ostatnie Projektowanie i Montaże</h2>
+                <p class="text-gray-400 text-base">Czystość wykonania i dbałość o detale to nasz znak rozpoznawczy.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Portfolio Card 1 -->
+                <div class="bg-brand-dark rounded-2xl overflow-hidden border border-gray-800 hover:border-brand-yellow transition-all duration-300 group">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://placehold.co/600x450/161F30/FFC107?text=Prefabrykacja\nRozdzielnicy+104M" alt="Rozdzielnica" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-brand-yellow text-xs font-semibold uppercase">Rozdzielnica Główna</span>
+                        <h3 class="text-lg font-bold text-white mt-1 mb-2">Prefabrykacja rozdzielnicy w domu 160 m²</h3>
+                        <p class="text-gray-400 text-xs">Stary Sącz • Pełne oznakowanie obwodów i zabezpieczenia RCD.</p>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Card 2 -->
+                <div class="bg-brand-dark rounded-2xl overflow-hidden border border-gray-800 hover:border-brand-yellow transition-all duration-300 group">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://placehold.co/600x450/161F30/FFC107?text=Trasy+Kablowe\ni+Bruzdowanie" alt="Trasy kablowe" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-brand-yellow text-xs font-semibold uppercase">Instalacja Podtynkowa</span>
+                        <h3 class="text-lg font-bold text-white mt-1 mb-2">Bezpyłowe bruzdowanie i układanie kabli</h3>
+                        <p class="text-gray-400 text-xs">Chełmiec • Idealnie równe piony i poziomy przed tynkowaniem.</p>
+                    </div>
+                </div>
+
+                <!-- Portfolio Card 3 -->
+                <div class="bg-brand-dark rounded-2xl overflow-hidden border border-gray-800 hover:border-brand-yellow transition-all duration-300 group">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://placehold.co/600x450/161F30/FFC107?text=Modu%C5%82y+Smart+Home\ni+Sterowanie" alt="Smart Home" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-brand-yellow text-xs font-semibold uppercase">Smart Home</span>
+                        <h3 class="text-lg font-bold text-white mt-1 mb-2">Automatyka rolet i oświetlenia LED</h3>
+                        <p class="text-gray-400 text-xs">Nowy Sącz • System zintegrowany ze sterowaniem z telefonu.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Szybki Kontakt / Direct CTA Section -->
+    <section id="kontakt" class="py-20 bg-brand-dark relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-brand-card to-gray-900 rounded-3xl p-8 md:p-14 border border-gray-800 text-center relative overflow-hidden shadow-2xl">
+                
+                <div class="inline-block px-4 py-1 rounded-full bg-brand-yellow/10 border border-brand-yellow/30 text-brand-yellow text-xs font-bold uppercase tracking-wider mb-6">
+                    Szybka Wycena Bez Formularzy
+                </div>
+                
+                <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6">
+                    Masz projekt lub potrzebujesz wyceny?
+                </h2>
+                <p class="text-gray-300 text-base md:text-lg mb-10 max-w-2xl mx-auto">
+                    Skontaktuj się z nami bezpośrednio przez komunikator lub telefonicznie. Odpowiadamy szybko, przyjeżdżamy na budowę i robimy rzetelną wycenę bez zobowiązań.
+                </p>
+
+                <!-- 2 Big Direct Action Buttons for Mobile/Desktop -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-2xl mx-auto mb-10">
+                    
+                    <!-- WhatsApp Button -->
+                    <a href="https://wa.me/48500000000?text=Dzie%C5%84%20dobry%2C%20chcia%C5%82bym%20zapyta%C4%87%20o%20wycen%C4%99%20instalacji." target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 bg-brand-whatsapp text-white py-5 px-6 rounded-2xl font-bold text-lg hover:bg-brand-whatsappHover transition-all shadow-[0_0_25px_rgba(37,211,102,0.3)]">
+                        <i class="ph-fill ph-whatsapp-logo text-3xl"></i>
+                        <span>Napisz na WhatsApp</span>
+                    </a>
+
+                    <!-- Phone Button -->
+                    <a href="tel:+48500000000" class="flex items-center justify-center gap-3 bg-brand-yellow text-brand-dark py-5 px-6 rounded-2xl font-bold text-lg hover:bg-brand-yellowHover transition-all shadow-[0_0_25px_rgba(255,193,7,0.3)]">
+                        <i class="ph-fill ph-phone-call text-3xl"></i>
+                        <span>Zadzwoń Teraz</span>
+                    </a>
+                </div>
+
+                <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-center items-center gap-6 text-sm text-gray-400">
+                    <div class="flex items-center gap-2">
+                        <i class="ph-fill ph-envelope-simple text-brand-yellow text-lg"></i>
+                        <span>kontakt@proelektro-ns.pl</span>
+                    </div>
+                    <div class="hidden md:block text-gray-700">•</div>
+                    <div class="flex items-center gap-2">
+                        <i class="ph-fill ph-map-pin text-brand-yellow text-lg"></i>
+                        <span>Nowy Sącz i powiat nowosądecki</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 py-8 border-t border-gray-900 text-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+            <div class="flex items-center gap-2">
+                <i class="ph-fill ph-lightning text-brand-yellow text-xl"></i>
+                <span class="font-bold text-white text-sm">ProElektro NS</span>
+            </div>
+            <p>&copy; 2026 ProElektro NS. Wszystkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Navigation -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const icon = document.getElementById('menu-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            menu.classList.toggle('open');
+            if (menu.classList.contains('open')) {
+                icon.classList.remove('ph-list');
+                icon.classList.add('ph-x');
+            } else {
+                icon.classList.remove('ph-x');
+                icon.classList.add('ph-list');
+            }
+        }
+
+        btn.addEventListener('click', toggleMenu);
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (menu.classList.contains('open')) {
+                    toggleMenu();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
